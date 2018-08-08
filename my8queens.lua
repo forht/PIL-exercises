@@ -1,5 +1,5 @@
 -- Exercise 2.2: this solution is slower as we are checking the 8!=40320
--- permutations while isplace ok is run only 15720 times
+-- permutations while isplaceok is run only 15720 times
 
 N = 8
 
