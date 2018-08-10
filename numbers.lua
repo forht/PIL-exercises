@@ -1,6 +1,6 @@
 -- Ex3.6: compute the volume of a right circular cone, given its height and the
 -- angle between a generatrix and the axis.
-function volumecone (height, angle)
+function volumecone(height, angle)
   local r = math.tan(angle) * height
   return r^2 * math.pi * height / 3
 end
@@ -18,7 +18,7 @@ function randomnormal()
   return z1
 end
 
-function mean (t)
+function mean(t)
   local sum = 0
   for _, v in pairs(t) do
     sum = sum + v
