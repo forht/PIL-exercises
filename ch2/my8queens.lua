@@ -7,10 +7,9 @@ function checksolution(t)
   for i = 1, N do
     c = t[i]
     for j = 1, N do
-      if i ~= j then
-        if (t[j] == c) or (t[j] - j == c - i) or (t[j] + j == c + i) then
-          return false
-        end
+      if i ~= j and
+      ((t[j] == c) or (t[j] - j == c - i) or (t[j] + j == c + i)) then
+        return false
       end
     end
   end
