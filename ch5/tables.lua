@@ -17,3 +17,10 @@ function polyval2(t, x)
   end
   return res
 end
+
+-- Ex 5.7 Write a function that inserts all elements of a given list into a
+-- given position of another given list.
+function insertallat(t1, p, t2)
+  return table.move(t1, 1, #t1, p, t2)
+end
+
