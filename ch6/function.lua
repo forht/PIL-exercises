@@ -29,6 +29,7 @@ function shuffle(t)
   end
 end
 
-local t = {1,2,3,4,5,6,7,8,9}
+local t = {1, 2, 3, 4, 5, 6, 7, 8, 9}
 shuffle(t)
 print(table.unpack(t))
+
