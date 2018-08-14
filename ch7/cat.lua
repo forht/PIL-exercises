@@ -1,4 +1,4 @@
--- Compare the performance of Lua programs that copy the standard input stream
+-- Ex 7.3 Compare the performance of Lua programs that copy the standard input stream
 -- to the standard output stream in the following ways: • byte by byte; • line
 -- by line; • in chunks of 8 kB; • the whole file at once. For the last option,
 -- how large can the input file be?
