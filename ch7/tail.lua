@@ -17,7 +17,9 @@ if (not size) or (size < 2^16) then
   io.write(last, "\n")
 else
   f:seek("end", -2)
-  while f:read(1) ~= "\n" do
+  while true do
+    local c = f:read(1)
+    if (not c) or c == "\n" then break end
     f:seek("cur", -2)
   end
   io.write(f:read("a"))
