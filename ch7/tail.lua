@@ -5,9 +5,9 @@ if #arg ~= 1 then
   os.exit()
 end
 
-f = assert(io.open(arg[1], "r"))
+local f = assert(io.open(arg[1], "r"))
+local size = f:seek("end")
 
-size = f:seek("end")
 if (not size) or (size < 2^16) then
   f:seek("set")
   local last
