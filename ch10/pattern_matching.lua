@@ -1,4 +1,4 @@
--- Exercise 10.1: Write a function split that receives a string and a delimiter
+-- Ex 10.1: Write a function split that receives a string and a delimiter
 -- pattern and returns a sequence with the chunks in the original string
 -- separated by the delimiter:
 
@@ -19,4 +19,8 @@ function split(s, d)
     pointer = e + 1
   end
   return t
+end
+
+function transliterate(s, t)
+  string.gsub(s, ".", function(c) return t[c] or "" end)
 end
