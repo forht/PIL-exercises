@@ -34,4 +34,9 @@ function firstfriday(y)
   return (6 - wday) % 7 + 1
 end
 
+-- Exercise 12.5: Write a function that computes the number of complete days
+-- between two given dates.
 
+function between(d1, d2)
+  os.difftime(os.time(d1), os.time(d2)) // 86400
+end

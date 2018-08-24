@@ -17,9 +17,7 @@ end
 -- Ex 6.4 Write a function to shuffle a given list. Make sure that all
 -- permutations are equally probable.
 function swap(t, i, j)
-  local temp = t[i]
-  t[i] = t[j]
-  t[j] = temp
+  t[i], t[j] = t[j], t[i]
 end
 -- Fisher-Yates shuffle
 function shuffle(t)
