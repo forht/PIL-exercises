@@ -34,18 +34,26 @@ function findpath (curr, to, path, visited)
     return nil
   end
   visited[curr] = true
-  path[#path + 1] = curr
+  -- path[#path + 1] = curr
   if curr == to then
     return path
   end
   for arc in pairs(curr.inc) do
+    path[#path + 1] = arc
     local p = findpath(arc.to, to, path, visited)
     if p then return p end
   end
   table.remove(path)
 end
 
+function printpath (path)
+  for _, arc in ipairs(path) do
+    print(arc.to.name, arc.label)
+  end
+end
+
 g = readgraph()
 a = name2node(g, "a")
 b = name2node(g, "b")
 p = findpath(a, b)
+printpath(p)
