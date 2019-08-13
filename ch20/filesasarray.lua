@@ -1,8 +1,11 @@
 function filesAsArray(filename)
-  file = io.open(filename, 'r+')
+  file = assert(io.open(filename, 'r+'))
   local len = file:seek('end')
   local proxy = {__file = file, __len = len}
   local mt = {
+    __gc = function (p)
+      p.__file:close()
+    end,
     __index = function (p, k)
       local f = p.__file
       f:seek('set', k)
@@ -24,7 +27,7 @@ function filesAsArray(filename)
     end
   }
   setmetatable(proxy, mt)
-  return proxy, file
+  return proxy
 end
 
 p, f = filesAsArray('data.txt')
@@ -32,4 +35,3 @@ p, f = filesAsArray('data.txt')
 for v in pairs(p) do
   print(v)
 end
-f:close()
